@@ -60,6 +60,25 @@ app.get('/', function(req, res) {
 });
 
 app.post('/', function(req, res) {
+
+  var AYLIENTextAPI = require('aylien_textapi');
+  var textapi = new AYLIENTextAPI({
+    application_id: "c0daeb83",
+    application_key: "fb5f0cb037770c5d9ad43e1bda001c73"
+  });
+
+  textapi.summarize({
+  title: 'Personal Statement',
+  text: req.body.text,
+  sentences_number: 5
+  }, function(error, response) {
+    if (error === null) {
+      response.sentences.forEach(function(s) {
+        console.log(s);
+      });
+    }
+  });
+
   personalityInsights.profile(req.body, function(err, profile) {
     if (err) {
       if (err.message){
