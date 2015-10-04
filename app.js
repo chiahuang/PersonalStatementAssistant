@@ -42,8 +42,8 @@ var personalityInsights = new watson.personality_insights(credentials);
 var credentialsBackup = {
   url: 'https://stream.watsonplatform.net/text-to-speech/api',
   version: 'v1',
-  username: '<username>',
-  password: '<password>',
+  username: '0dc306f4-623a-43ee-979f-e8cd20ee4478',
+  password: 'DVCD3k826ZIW',
   use_vcap_services: true   
 };
 
